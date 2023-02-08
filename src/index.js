@@ -8,12 +8,13 @@ import 'font-awesome/css/font-awesome.min.css';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render((
+ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
                 <App />
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>
-), document.getElementById('root'));
+    </React.StrictMode>,
+    document.querySelector('#root')
+);
