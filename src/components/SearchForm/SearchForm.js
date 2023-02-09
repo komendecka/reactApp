@@ -9,7 +9,6 @@ import {updateSearch} from "../../redux/store";
 const SearchForm = () => {
     const [searchString, setSearchString] = useState('');
     const dispatch = useDispatch();
-
     const handleSubmit = (e) => {
          e.preventDefault();
         dispatch(updateSearch ({ searchString }));

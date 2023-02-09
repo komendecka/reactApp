@@ -2,10 +2,14 @@ import styles from './List.module.scss';
 import Column from './../Column/Column.js';
 import ColumnForm from './../ColumnForm/ColumnForm.js';
 import { useSelector } from 'react-redux';
-import { getAllColumns } from '../../redux/store';
+import { getColumnsByList} from '../../redux/store';
+import { useParams } from 'react-router';
+import SearchForm from "../SearchForm/SearchForm";
 
 const List = () => {
-    const columns = useSelector(getAllColumns);
+
+    const { listId } = useParams();
+    const columns = useSelector(state => getColumnsByList(state, listId));
 
     return (
         <div className={styles.list}>
@@ -13,14 +17,11 @@ const List = () => {
                 <h2 className={styles.title}>Things to do<span>soon!</span></h2>
             </header>
             <p className={styles.description}>Interesting things I want to check out</p>
+            <SearchForm />
             <section className={styles.columns}>
-                {columns.map(column =>
-                    <Column
-                        key={column.id}
-                        {...column}  />
-                )}
+                {columns.map(column => <Column key={column.id} {...column}  />)}
             </section>
-            <ColumnForm />
+            <ColumnForm listId={listId} />
         </div>
     );
 };
