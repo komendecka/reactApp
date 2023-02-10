@@ -24,7 +24,7 @@ const ListForm = ({listId}) => {
             <TextInput value={title} onChange={e => setTitle(e.target.value)}/>
             <span> Description: </span>
             <TextInput value={description} onChange={e => setDescription(e.target.value)}/>
-            <Button>Add List</Button>
+            <Button type='submit'>Add List</Button>
         </form>
     );
 };
