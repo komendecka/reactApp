@@ -7,7 +7,6 @@ import { useParams } from 'react-router';
 import SearchForm from "../SearchForm/SearchForm";
 
 const List = () => {
-
     const { listId } = useParams();
     const columns = useSelector(state => getColumnsByList(state, listId));
 

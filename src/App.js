@@ -7,7 +7,6 @@ import { Routes, Route } from 'react-router-dom';
 import Error from "./components/Error/Error";
 import List from "./components/List/List";
 
-
 const App = () => {
     return (
         <main>

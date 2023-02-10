@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import {useState} from 'react';
 import {updateSearch} from "../../redux/store";
 
-
 const SearchForm = () => {
     const [searchString, setSearchString] = useState('');
     const dispatch = useDispatch();
@@ -14,7 +13,6 @@ const SearchForm = () => {
         dispatch(updateSearch ({ searchString }));
         setSearchString('');
      };
-
 
     return (
         <form className={styles.searchForm} onSubmit={handleSubmit}>
