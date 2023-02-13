@@ -7,8 +7,8 @@ import Card from '../Card/Card';
 const Favorite = () => {
 
     const favoriteCards = useSelector(getFliteredFavoriteCards);
-    if(favoriteCards.lenght === 0) {
-        return(
+    if(favoriteCards.length === 0) {
+        return (
             <div className={styles.favorite}>
                 <PageTitle>Favorite</PageTitle>
                 <p className={styles.favorite_subtitle}>No Cards</p>
@@ -16,7 +16,7 @@ const Favorite = () => {
         )
     }
 
-    return(
+    return (
         <div className={styles.favorite}>
             <PageTitle>Favorite</PageTitle>
             <ul className={styles.cards}>
